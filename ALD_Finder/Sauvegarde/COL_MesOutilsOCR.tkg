@@ -1,0 +1,484 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : COL_MesOutilsOCR
+ major_version : 31
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x199465b500102e25
+ internal_properties : IQAAACAAAAA/sPJK6oMXQvHe/6UcoDxmu24UStT77XAZeESItN6U1+tormzY
+ code_elements :
+  type_code : 31
+  p_codes :
+   -
+     code : |1+
+      ST_InfosPatient est une Structure
+      	EstALD					est un booléen
+      	TexteBrut				est une chaîne
+      fin
+     type : 720896
+   -
+     code : |1-
+      
+         
+     type : 720898
+  procedures :
+   -
+     name : RecupereVersionCerfa
+     procedure_id : 1843210568271742660
+     type_code : 15
+     code : |1+
+      // Résumé : <indiquez ici ce que fait la procédure>
+      // Syntaxe :
+      // RecupereVersionCerfa ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      // Exemple :
+      // <Indiquez ici un exemple d'utilisation>
+      //
+      PROCEDURE RecupereVersionCerfa(sTexteOCR est une chaîne) : chaîne
+      
+      sTexteTraite est une chaîne = Remplace(sTexteOCR, Caract(13), " ")
+      sTexteTraite = Remplace(sTexteTraite, Caract(10), " ")
+      
+      sTexteCompact	est une chaîne	= Remplace(sTexteTraite, " ", "")
+      
+      sMotif			est une chaîne	= ".*[1lI\|]{2}[5S]7[4A][^0-9]*([0-9]{2}).*"
+      
+      sVersionTrouvee	est une chaîne	= ""
+      
+      SI RegexVérifie(sTexteTraite, sMotif, sVersionTrouvee) ALORS
+      	nVersion est un entier = Val(sVersionTrouvee)
+      
+      	// Filtre de cohérence (entre 03 et 15)
+      	SI nVersion >= 3 ET nVersion <= 20 ALORS
+      		RENVOYER NumériqueVersChaîne(nVersion, "02d")
+      	FIN
+      FIN
+      
+      // Tentative de secours sur le mot "CERFA" simple si le numéro 11574 est trop abimé
+      sMotifSecours est une chaîne = ".*CERFA.*?([0-9]{2}).*"
+      SI RegexVérifie(sTexteTraite, sMotifSecours, sVersionTrouvee) ALORS
+      	nVersion est un entier = Val(sVersionTrouvee)
+      	SI nVersion >= 3 ET nVersion <= 20 ALORS
+      		RENVOYER NumériqueVersChaîne(nVersion, "02d")
+      	FIN
+      FIN
+      
+      RENVOYER "06"
+      
+     type : 458752
+   -
+     name : ALDFinder
+     procedure_id : 1843211027833678387
+     type_code : 15
+     code : |1-
+      PROCÉDURE ALDFinder(imgOriginale est une Image, sVersion est une chaîne) : booléen
+      
+      rRatioL	est un réel	= 0.030
+      rRatioH	est un réel	= 0.025
+      
+      rX_Exo	est un réel; rY_Exo est un réel
+      rX_Non	est un réel; rY_Non est un réel
+      
+      SELON sVersion
+      	CAS "04"
+      		rX_Exo	= 0.700; rY_Exo = 0.280
+      		rX_Non	= 0.870; rY_Non = 0.280
+      	CAS "06", "07"
+      		rX_Exo	= 0.185; rY_Exo = 0.285
+      		rX_Non	= 0.410; rY_Non = 0.285
+      	AUTRE CAS
+      		rX_Exo	= 0.215; rY_Exo = 0.345
+      		rX_Non	= 0.410; rY_Non = 0.345
+      FIN
+      
+      // Note : On part du principe que AnalyseRemplissageZone renvoie un % de 0 à 100
+      rScoreExo	est un réel	= AnalyseRemplissageZone(imgOriginale, rX_Exo, rY_Exo, rRatioL, rRatioH)
+      rScoreNon	est un réel	= AnalyseRemplissageZone(imgOriginale, rX_Non, rY_Non, rRatioL, rRatioH)
+      
+      // =========================================================================
+      // --- DÉBUT DÉBOGAGE VISUEL ---
+      // On dessine APRÈS l'analyse pour ne pas fausser le comptage
+      // =========================================================================
+      dDébutDessin(imgOriginale)
+      
+      // On calcule les pixels exacts à partir de tes pourcentages
+      nX_Exo_Abs		est un entier	= rX_Exo * imgOriginale.Largeur
+      nY_Exo_Abs		est un entier	= rY_Exo * imgOriginale.Hauteur
+      nX_Non_Abs		est un entier	= rX_Non * imgOriginale.Largeur
+      nY_Non_Abs		est un entier	= rY_Non * imgOriginale.Hauteur
+      
+      nLargCase_Abs	est un entier	= rRatioL * imgOriginale.Largeur
+      nHautCase_Abs	est un entier	= rRatioH * imgOriginale.Hauteur
+      
+      // On dessine un cadre VERT autour de la case OUI (Exo)
+      dRectangle(nX_Exo_Abs, nY_Exo_Abs, nX_Exo_Abs + nLargCase_Abs, nY_Exo_Abs + nHautCase_Abs, VertFoncé, 3)
+      
+      // On dessine un cadre ROUGE autour de la case NON
+      dRectangle(nX_Non_Abs, nY_Non_Abs, nX_Non_Abs + nLargCase_Abs, nY_Non_Abs + nHautCase_Abs, RougeClair, 3)
+      // --- FIN DÉBOGAGE VISUEL ---
+      // =========================================================================
+      
+      bEstCoche est un booléen = Faux
+      
+      // Règle 1 : Exo est clairement dominant (20% de plus) ET a de la matière (> 1%)
+      SI (rScoreExo > (rScoreNon * 1.2)) ET (rScoreExo > 1.0) ALORS
+      	bEstCoche = Vrai
+      SINON
+      	// Règle 2 : Différence absolue (croix légère)
+      	// Ajout sécurité : On s'assure que rScoreNon n'est pas lui-même un énorme score
+      	SI (rScoreExo > rScoreNon + 1.5) ET (rScoreNon < 5.0) ALORS
+      		bEstCoche = Vrai
+      	FIN
+      FIN
+      
+      RENVOYER bEstCoche
+     type : 458752
+   -
+     name : RedresserEtRogner_PMT
+     procedure_id : 1843211710733768819
+     type_code : 15
+     code : |1-
+      PROCÉDURE RedresserEtRogner_PMT(IMG_Originale est une Image) : Image
+      
+      // 1. CONVERSION EN BUFFER (Indispensable pour Java)
+      // On utilise dSauveImagePNG ou JPEG en mémoire.
+      // Cela transforme l'image (même venant de la caméra) en un fichier binaire standard.
+      bufImage est un Buffer = dSauveImagePNG(IMG_Originale, enMémoire)
+      
+      SI Taille(bufImage) = 0 ALORS
+      	// Si la conversion en mémoire échoue, c'est que l'image source est vide
+      	Trace("Erreur : Image vide avant envoi au Java.")
+      	RENVOYER IMG_Originale
+      FIN
+      
+      // 2. APPEL DU JAVA
+      // On envoie le buffer, le Java décode, traite et renvoie un buffer
+      bufResultat est un Buffer = _Jv_RedresserEtRogner_ToutEnUn(bufImage)
+      
+      // 3. RECONSTRUCTION DE L'IMAGE
+      SI Taille(bufResultat) = 0 ALORS
+      	Trace("Erreur ou Echec du traitement Java")
+      	RENVOYER IMG_Originale
+      FIN
+      
+      // On charge le résultat propre dans une image WINDEV
+      IMG_Propre est une Image = bufResultat
+      
+      RENVOYER IMG_Propre
+     type : 458752
+   -
+     name : _Jv_RedresserEtRogner_ToutEnUn
+     procedure_id : 1843211822403010114
+     type_code : 15
+     code : |1-
+      import android.graphics.Bitmap;
+      import android.graphics.BitmapFactory;
+      import android.graphics.Matrix;
+      import android.graphics.Canvas;
+      import android.graphics.Color;
+      import android.graphics.Paint;
+      import android.graphics.RectF;
+      import java.io.ByteArrayOutputStream;
+      import java.lang.Math;
+      
+      public static byte[] _Jv_RedresserEtRogner_ToutEnUn(byte[] imageBytes) {
+      
+          if (imageBytes == null || imageBytes.length == 0) return null;
+      
+          Bitmap original = null;
+          Bitmap rotated = null;
+          Bitmap cropped = null;
+      
+          try {
+              original = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+              if (original == null) return null;
+      
+              int width = original.getWidth();
+              int height = original.getHeight();
+      
+              // 1. DÉTECTION BARRE DU HAUT
+              int xLeft = (int)(width * 0.18);
+              int xRight = (int)(width * 0.82);
+              int scanHeightTop = (int)(height * 0.30);
+      
+              float yTopLeft = findThickBlackLineY_Top(original, xLeft, scanHeightTop);
+              float yTopRight = findThickBlackLineY_Top(original, xRight, scanHeightTop);
+      
+              // Si on ne trouve pas la barre, on renvoie l'image d'origine directement
+              if (yTopLeft == -1 || yTopRight == -1) {
+                  return imageBytes;
+              }
+      
+              // 2. CALCUL ANGLE
+              double deltaY = yTopRight - yTopLeft;
+              double deltaX = xRight - xLeft;
+              float angleDeg = (float)Math.toDegrees(Math.atan2(deltaY, deltaX));
+      
+              if (Math.abs(angleDeg) > 12.0f) angleDeg = 0.0f;
+      
+              // 3. FOND BLANC ET ROTATION
+              Matrix matrix = new Matrix();
+              if (Math.abs(angleDeg) > 0.2) {
+                  matrix.setRotate(-angleDeg, width / 2.0f, height / 2.0f);
+              }
+      
+              RectF bounds = new RectF(0, 0, width, height);
+              matrix.mapRect(bounds);
+              int rotW = Math.round(bounds.width());
+              int rotH = Math.round(bounds.height());
+      
+              matrix.postTranslate(-bounds.left, -bounds.top);
+      
+              rotated = Bitmap.createBitmap(rotW, rotH, Bitmap.Config.ARGB_8888);
+              Canvas canvas = new Canvas(rotated);
+              canvas.drawColor(Color.WHITE);
+      
+              Paint paint = new Paint();
+              paint.setFilterBitmap(true);
+              canvas.drawBitmap(original, matrix, paint);
+      
+              // 4. CALCUL DE LA COUPE HAUT
+              float[] topPoint = new float[] { width / 2.0f, (yTopLeft + yTopRight) / 2.0f };
+              matrix.mapPoints(topPoint);
+              int yCutTop = Math.max(0, (int)topPoint[1] + 2);
+      
+              // 5. DÉTECTION DU BAS
+              int yCutBottom = findContentBottom(rotated);
+      
+              // 6. DÉTECTION GAUCHE ET DROITE
+              int xCutLeft = 0;
+              int threshold = 110;
+      
+              for (int x = 5; x < rotW / 3; x += 3) {
+                  int blackCount = 0;
+                  for (int y = rotH * 15 / 100; y < rotH * 85 / 100; y += 5) {
+                      int pixel = rotated.getPixel(x, y);
+                      int lum = (int)(0.299 * ((pixel >> 16) & 0xFF) + 0.587 * ((pixel >> 8) & 0xFF) + 0.114 * (pixel & 0xFF));
+                      if (lum < threshold) blackCount++;
+                  }
+                  if (blackCount > 25) {
+                      xCutLeft = x;
+                      break;
+                  }
+              }
+      
+              int xCutRight = rotW;
+              for (int x = rotW - 5; x > rotW * 2 / 3; x -= 3) {
+                  int blackCount = 0;
+                  for (int y = rotH * 15 / 100; y < rotH * 85 / 100; y += 5) {
+                      int pixel = rotated.getPixel(x, y);
+                      int lum = (int)(0.299 * ((pixel >> 16) & 0xFF) + 0.587 * ((pixel >> 8) & 0xFF) + 0.114 * (pixel & 0xFF));
+                      if (lum < threshold) blackCount++;
+                  }
+                  if (blackCount > 25) {
+                      xCutRight = x;
+                      break;
+                  }
+              }
+      
+              // 7. MARGES DE SÉCURITÉ FINALES
+              int paddingSide = 5;
+              int paddingBottom = 5;
+      
+              xCutLeft = Math.max(0, xCutLeft - paddingSide);
+              xCutRight = Math.min(rotW, xCutRight + paddingSide);
+              yCutBottom = Math.min(rotH, yCutBottom + paddingBottom);
+      
+              int finalWidth = xCutRight - xCutLeft;
+              int finalHeight = yCutBottom - yCutTop;
+      
+              if (finalWidth < rotW * 0.4) { xCutLeft = 0; finalWidth = rotW; }
+              if (finalHeight < rotH * 0.4) { finalHeight = rotH - yCutTop; }
+      
+              if (xCutLeft + finalWidth > rotW) finalWidth = rotW - xCutLeft;
+              if (yCutTop + finalHeight > rotH) finalHeight = rotH - yCutTop;
+      
+              // 8. SORTIE
+              cropped = Bitmap.createBitmap(rotated, xCutLeft, yCutTop, finalWidth, finalHeight);
+      
+              ByteArrayOutputStream stream = new ByteArrayOutputStream();
+              cropped.compress(Bitmap.CompressFormat.JPEG, 90, stream);
+              return stream.toByteArray();
+      
+          } catch (Exception e) {
+              // En cas de problème, on renvoie l'original
+              e.printStackTrace();
+              return imageBytes;
+          } finally {
+              // BLOC CRUCIAL : Libère la RAM Android
+              if (original != null && !original.isRecycled()) original.recycle();
+              if (rotated != null && !rotated.isRecycled()) rotated.recycle();
+              if (cropped != null && !cropped.isRecycled()) cropped.recycle();
+          }
+      }
+      
+      // --- AIDE 1 : Trouve la barre du HAUT (ULTRA ROBUSTE) ---
+      private static float findThickBlackLineY_Top(Bitmap bmp, int x, int maxH) {
+          int threshold = 110;
+          int curLen = 0;
+          int curStart = -1;
+          int width = bmp.getWidth();
+      
+          for (int y = 10; y < maxH; y++) {
+              int pixel = bmp.getPixel(x, y);
+              int lum = (int)(0.299 * ((pixel >> 16) & 0xFF) + 0.587 * ((pixel >> 8) & 0xFF) + 0.114 * (pixel & 0xFF));
+      
+              if (lum < threshold) {
+                  // C'est un pixel noir, on commence (ou on continue) à compter l'épaisseur
+                  if (curLen == 0) curStart = y;
+                  curLen++;
+              } else {
+                  // On retombe sur du blanc, on analyse ce qu'on vient de traverser
+                  if (curLen > 0) {
+                      // Filtre d'épaisseur (ignore le texte fin et la grosse bannière du Cerfa 06)
+                      if (curLen >= 3 && curLen <= 30) {
+                          int midY = curStart + (curLen / 2);
+                          int blackSides = 0;
+                          int checkDist = 12;
+      
+                          // Vérification continuité à gauche
+                          if (x - checkDist >= 0) {
+                              int pLeft = bmp.getPixel(x - checkDist, midY);
+                              int lLeft = (int)(0.299 * ((pLeft >> 16) & 0xFF) + 0.587 * ((pLeft >> 8) & 0xFF) + 0.114 * (pLeft & 0xFF));
+                              if (lLeft < threshold) blackSides++;
+                          }
+      
+                          // Vérification continuité à droite
+                          if (x + checkDist < width) {
+                              int pRight = bmp.getPixel(x + checkDist, midY);
+                              int lRight = (int)(0.299 * ((pRight >> 16) & 0xFF) + 0.587 * ((pRight >> 8) & 0xFF) + 0.114 * (pRight & 0xFF));
+                              if (lRight < threshold) blackSides++;
+                          }
+      
+                          // Si c'est bien une ligne horizontale
+                          if (blackSides > 0) {
+                              return (float)midY;
+                          }
+                      }
+                      curLen = 0;
+                  }
+              }
+          }
+          return -1;
+      }
+      
+      // --- AIDE 2 : Trouve la fin du texte en BAS ---
+      private static int findContentBottom(Bitmap bmp) {
+          int width = bmp.getWidth();
+          int height = bmp.getHeight();
+          int threshold = 110;
+          for (int y = height - 5; y > height * 0.5; y -= 4) {
+              int blackPixelsCount = 0;
+              for (int x = 50; x < width - 50; x += 8) {
+                  int pixel = bmp.getPixel(x, y);
+                  int lum = (int)(0.299 * ((pixel >> 16) & 0xFF) + 0.587 * ((pixel >> 8) & 0xFF) + 0.114 * (pixel & 0xFF));
+                  if (lum < threshold) blackPixelsCount++;
+              }
+              if (blackPixelsCount > 15) return y;
+          }
+          return height;
+      }
+     language : Java
+     type : 458752
+   -
+     name : AnalyseRemplissageZone
+     procedure_id : 1843212548252586258
+     type_code : 15
+     code : |1-
+      procédure AnalyseRemplissageZone(imgSource est une Image, nX_Pct est un réel, nY_Pct est un réel, nL_Pct est un réel, nH_Pct est un réel) : réel
+      
+      // 1. Découpe de la zone
+      nZoneX			est un entier	= Max(0, imgSource.Largeur * nX_Pct)
+      nZoneY			est un entier	= Max(0, imgSource.Hauteur * nY_Pct)
+      nZoneL			est un entier	= imgSource.Largeur * nL_Pct
+      nZoneH			est un entier	= imgSource.Hauteur * nH_Pct
+      
+      imgZoneTravail	est une Image	= dDécoupe(imgSource, nZoneX, nZoneY, nZoneL, nZoneH)
+      
+      // Sécurité : Si découpe invalide
+      si imgZoneTravail.Largeur = 0 alors renvoyer 0.0
+      
+      // -----------------------------------------------------------------------
+      // DEBUG VISUEL : A DECOMMENTER SI LE RESULTAT EST TOUJOURS BIZARRE
+      // Cela vous permet de voir ce que l'algo "voit".
+      // Si vous voyez du noir ici, c'est que les coordonnées (nX_Pct) sont fausses.
+      // FEN_debug.IMG_Controle = imgZoneTravail
+      // -----------------------------------------------------------------------
+      
+      // 2. ETALONNAGE : On cherche le "Blanc du papier" (Luminosité Max)
+      // On parcourt une zone centrale pour éviter les bords noirs éventuels de la découpe
+      nLuminositeMax	est un entier	= 0
+      nC				est un entier
+      nL				est un entier
+      
+      // On scanne le cœur de l'image (de 20% à 80%) pour trouver le point le plus clair
+      pour x = (imgZoneTravail.Largeur * 0.2) à (imgZoneTravail.Largeur * 0.8)
+      	pour y = (imgZoneTravail.Hauteur * 0.2) à (imgZoneTravail.Hauteur * 0.8)
+      		nC = dPixelCouleur(imgZoneTravail, x, y)
+      		si nC <> -1 alors
+      			nL = CouleurLuminosité(nC)
+      			// On garde la luminosité la plus forte trouvée (c'est le papier)
+      			si nL > nLuminositeMax alors nLuminositeMax = nL
+      		fin
+      	fin
+      fin
+      
+      // Si la luminosité max est très faible (<30), c'est que l'image est noire (erreur de zone)
+      si nLuminositeMax < 30 alors renvoyer 0.0
+      
+      // 3. DEFINITION DU SEUIL DYNAMIQUE
+      // On considère comme "Encre" tout pixel qui est nettement plus sombre que le papier.
+      // On fixe le seuil à 70% de la luminosité du papier.
+      // Ex: Papier à 200 -> Seuil à 140. Tout ce qui est < 140 est compté.
+      // Ex: Papier sombre (ombre) à 100 -> Seuil à 70.
+      nSeuilDetection	est un entier	= nLuminositeMax * 0.70
+      
+      // 4. COMPTAGE (Zone centrale uniquement)
+      nPixelsNoirs	est un entier	= 0
+      nTotalPixels	est un entier	= 0
+      
+      // On réduit légèrement la zone de comptage (marge de 10%) pour éviter le cadre de la case
+      nDebutX			est un entier	= imgZoneTravail.Largeur * 0.10
+      nFinX			est un entier	= imgZoneTravail.Largeur * 0.90
+      nDebutY			est un entier	= imgZoneTravail.Hauteur * 0.10
+      nFinY			est un entier	= imgZoneTravail.Hauteur * 0.90
+      
+      pour x = nDebutX à nFinX
+      	pour y = nDebutY à nFinY
+      		nC = dPixelCouleur(imgZoneTravail, x, y)
+      		si nC <> -1 alors
+      			nL = CouleurLuminosité(nC)
+      			// Si le pixel est plus sombre que notre seuil dynamique
+      			si nL < nSeuilDetection alors
+      				nPixelsNoirs++
+      			fin
+      			nTotalPixels++
+      		fin
+      	fin
+      fin
+      
+      si nTotalPixels = 0 alors renvoyer 0.0
+      
+      // 5. Renvoie le pourcentage
+      renvoyer (nPixelsNoirs / nTotalPixels) * 100
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : IQAAACAAAAAFPuXd7fBX1/SiDTB6sHrfMZ5LqScVEUxNStUfcDtxIwFPEz+iD9Gkb2T8
+  original_name : COL_SansNom1
+resources :
+ string_res :
+  identifier : 0x1994659f000ed6dd
+  internal_properties : IQAAACAAAABIHuZaAXJSMMdsH1inoYVK5dFk/flpf9mTTRxUzjOZ6l8XnvSnO9Iw3g==
+custom_note :
+ internal_properties : IQAAACAAAADHMJbkzjYofeIDmEvswFy+SzkIk5HN+Jrst5U0+JApjeCrL9+4Iw==

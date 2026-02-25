@@ -1,0 +1,24 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : COL_MesOutilsOCR
+ major_version : 31
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x199465b500102e25
+ internal_properties : IQAAACAAAAA/sPJK6oMXQvHe/6UcoDxmu24UStT77XAZeESItN6U1+tormzY
+ code_elements :
+  type_code : 31
+  p_codes : []
+ code_parameters :
+  internal_properties : IQAAACAAAAAFPuXd7fBX1/SiDTB6sHrfMZ5LqScVEUxNStUfcDtxIwFPEz+iD9Gkb2T8
+  original_name : COL_SansNom1
+resources :
+ string_res :
+  identifier : 0x1994659f000ed6dd
+  internal_properties : IQAAACAAAABIHuZaAXJSMMdsH1inoYVK5dFk/flpf9mTTRxUzjOZ6l8XnvSnO9Iw3g==
+custom_note :
+ internal_properties : IQAAACAAAADHMJbkzjYofeIDmEvswFy+SzkIk5HN+Jrst5U0+JApjeCrL9+4Iw==
