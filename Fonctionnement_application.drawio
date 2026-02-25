@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.8">
+  <diagram name="Page-1" id="o-KtKn291EldyljW0UlX">
+    <mxGraphModel dx="1303" dy="703" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4xU-sSkydvJVwzOwhsOK-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;strokeWidth=1;fontSize=30;" value="Schéma du fonctionnement de l&#39;application." vertex="1">
+          <mxGeometry height="30" width="753" x="37" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="4xU-sSkydvJVwzOwhsOK-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=24;" value="Prescription médicale de transport" vertex="1">
+          <mxGeometry height="175" width="249" x="118" y="171" as="geometry" />
+        </mxCell>
+        <mxCell id="4xU-sSkydvJVwzOwhsOK-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="135" width="202" x="539" y="191" as="geometry" />
+        </mxCell>
+        <mxCell id="4xU-sSkydvJVwzOwhsOK-5" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="556" y="212" as="sourcePoint" />
+            <mxPoint x="382" y="178" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4xU-sSkydvJVwzOwhsOK-6" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="395" y="331" as="sourcePoint" />
+            <mxPoint x="558" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4xU-sSkydvJVwzOwhsOK-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Scan&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="453" y="227" as="geometry" />
+        </mxCell>
+        <mxCell id="4xU-sSkydvJVwzOwhsOK-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Scan du document" vertex="1">
+          <mxGeometry height="170" width="101" x="118" y="443" as="geometry" />
+        </mxCell>
+        <mxCell id="4xU-sSkydvJVwzOwhsOK-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Image" vertex="1">
+          <mxGeometry height="170" width="101" x="381" y="443" as="geometry" />
+        </mxCell>
+        <mxCell id="4xU-sSkydvJVwzOwhsOK-12" edge="1" parent="1" source="4xU-sSkydvJVwzOwhsOK-9" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4xU-sSkydvJVwzOwhsOK-11" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="401" y="709" as="sourcePoint" />
+            <mxPoint x="451" y="659" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
