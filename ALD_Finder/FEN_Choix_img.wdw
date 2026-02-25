@@ -1,0 +1,460 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : FEN_Choix_img
+ major_version : 31
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : FEN_Choix_img
+ identifier : 0x299462fe1e5f939b
+ internal_properties : IQAAACAAAABsaRJArtP/Yo/OoRHbr4/Bv81hbNqFMOjr2enYRhJRLhPbeLsWAUBG8ZiaCvjiwYYQv67iKUlYYbOu+4P77OCGlXt3FHDqi34VPa/0Fzkja2R2EfxHYcPfUWERtiZ4VRc5ytFuUxll1dMngcSmBu/yGsXNhCKYa+qr/7LBMAQjyRFrUqFHGuPZn4ld1aEKM8sR6VKVHh8djQwCfKWJn6zPI/z5wBVzFwIIXNKF0Joz2j3v5rkSwYK34+fjZWsIpmgZP5rd64AtqIOT5g7w31F+hDMpL9IAle/0lm2g/NmE+OAPkNr2WmIdS2xLEgV0kPvsObwZNbEE8l5FNhRvWmhIvZx3g/MybQ9mwv0KesL/FbcsuVpAUheOGSfFmcYnwGoIL4uZnoTXJcGQy5XpibO6DK6ylKB/Uy6uXn2Tj/h/wHwjt9j2nTp4WYbaNZBXe6C++Q71AmVBHeLDIBsOO/zDmkOdQem1c79mYWklkxQQgOK7O8PLAGZfGsMJq5SmarA/71eDN/IugBiWqGehXG87A6SuxrtMXGTUKA7e4Fz9add3ngTjVOubglis5htzuimDNb0Dd/EFaXB2MBZ2UIoLkaeFdt6ADe9CwU+IOF4tFOEDQjL4oEH+YYCuAvCrmNIPHS9XTd95bjcj788cLJfh3Ze7a1refcxWeUoimPTquORAd2hGheytnOx9OnKHbKr5isFfkP8XoWNsW7dBc6Yus3SjkVrjvK3ZmDAReLVAfuyOgZfAF/arDH2CGODJ9Odln9N7QWF5Kv9NPSfcxDmcMzDkaDgzASOo9U/HZMvXeG0rtC/BGkViOiZ2UDoJKvKtcpN5/uDlN+phuZvY7opHnQjH2Z0vt5jHd8HO3dXLeSW8tO+fa9MvLsVFGYxCI4AlaFbudwrL0eeskmEG499KwqHbcODOteeOZg==
+ properties :
+  width : 360
+  height : 569
+  heightMin : 650
+ controls :
+  -
+    name : BTN_Nouveau
+    identifier : 0x2994637f00c18ba2
+    internal_properties : IQAAACAAAAAdpKYanjGJB5NwE+7JgQSkurQbCKJO/HEPSDBwtpvBSq3PCw4jBvRsBjeWn0WJaC7NXSFNTGtGp/VlgPPM926wj2TOJXABcDtkCBeR/CjG19OFYUTStWavTm86ec0CgRzKWC5dIVINLU0yFN8I/0hGC1L3hQSb+q/XPPbsGkvuRaDNIwXQZc5xAso5pkIighp7Rfx+IHlhLvEuTnZfotlMK7pp8shaDWc7xheRlRsp6dzO3aDuggyzVsGAX20XYnV7FZ7hHP+mLHUSxjmAOO9BC0aH5lzVEXcKI/iwWtGgJqag6aI84HoSZkYSLx+6st4lsXLX3O1e0EiB0MsAeD85GHbTeN+Xl/5Eet/Qvnumv/s92W91znzuXlqYI2ODQ6VuKM1ll5suozdt2u+tv0flkYDCrzS2AtW8j4qtNlwhi2uLZtA5W9ScjYSY5CFxuQ7n7uxDrvxQP2WKczNCO4lCiq4/ErAskqwSVV4ueb2VyqSrqtHY6gP3ejKXJRHNQyF6qZdcrd84PyBNkUcMOGIA11MZJMVPiFC2Qx6yl5YWJu0AGd2BP2ESjonnq/xBOdrV5xshZ/+YJo5gpzH7ggmYSSBumWoYva3rz5cl+gYujZiyDWTy4ZvyZxiREOxOI+EMpGLn+EmqICI9sAKZrytVNvz/qRlcGREXMEs7EpCy75IM/QzhhOKE/M44bbJ/m6wT0j7bpZmu2Kqa748529ElnRwpvIDK9prAHOQj03gSXG1LF44dirWYpC+cwuiUlv+00aTByVT5iAHyvzjdwIE+F0H4P5up4IPS9cUi0aLF27GXDfEA+oTYqlaHqwnzNUMaLSJQvH+Og9ekN4l/c+Ml7MUzEaCJnxnDccBBI5gosED+3PhNz2qt86YCDCLr0nP884AE5upgnMTV1zYAm3cE4QiWKPfVdSmgXtZ1IXcZFkD/Qugh7g0w+cw3cz7BYhZlPaYdC3WncGAVD5FWezDLCqUbI9rx
+    properties :
+     x : 189
+     y : 195
+     width : 157
+     height : 60
+     anchor : 13
+     anchor_ratio_pos_x : 600
+     anchor_ratio_size_x : 300
+     anchor_ratio_pos_y : 500
+     accelerator_key : 65535
+     tab_order : 2
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         // Version 1
+         // Description 
+         // Bouton au style Nouveau pour ajouter ou créer des éléments
+        type : 14
+      -
+        code : |1-
+         ScanDocumentDepuisCaméra(CallbackPhoto)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Annuler
+    identifier : 0x2994637f00c38ba2
+    internal_properties : IQAAACAAAADbkgknXv5FvNC8JQGnZ3Nrx+noUnIUQ4rddU17Bhx46BB9bNt8Os0aMEsBPSbzOhICMRQD9yH2tTYsrSFUeojOcamthWTV/WiBHc9zsnNEfOa50tcMegztaIefz+aSfKdNQ5hVmHTAF7UOjKkVbYSXhk5aQRxWvgHLXlMKrJ/NO/2UuNTPeq1snsV0ujKrBDvU+r6UhjDBSf28J1BFxGlFKtnYFrW4THOgayfX6o6WC8pEIFHMEnEg92JlTx2DDYdPt9TNPa5HNSvDh5BO0EGuS0RxQufrG7ChH3EmCkjtuAPWRdUMv6/ajGazub4ggwWbuHlONX1zrGOdmD4VIV1ms0dBph99S+QPkrq0FUJZXFtQ6pfRlI5hFrXsNs+R7zxhhzPVoRY3hppg6qpEc8gXa40DwOMtJ9G11LP6ZpLG+R57ICUHLEW2mz650x7x5KsMe2UojBXyvv/xVHCeXu2b3CBrYHKJIAFJ+hIyvvfCRswYeovCwFfao2D9kwNBp/lGUV3IbmISZzrz8x6FWrtuzV12qf24avUPQ223Wi9g55Fvj63ksuPSKUDItSApnsJMEbzmuaHfus89tg3ZhF5ZWHo5RJtoq2wqPM3mj5ytYSHfNVno/OBSgAIbMQH/c2ac1kLBr4q29Q+5AtL770SXF4MBBQUrsZ8bmM0kp1ZefvXoIfl7UXjCO70gMVdQAObheCTafpfrOWY65pDJA512wx791V83FDkwb1Kmat1HQrwJZou3FnJjF0AdqKJ4seaE+aTwdclDe/SSSf6gKVvqagXFwdPosVY1suYw55RmA6GuUezjw/k6a67KEbP3zgmzj/xpkXyEOG9OCcZ3sGwFJRpLyXV6bsXa+T71XSRTQIX3eKdZs+t+bbzG1j4R9j5mN+imabY8bVUPEP+hQhin2w/GJiSFh9owrmm2lNlTt7P3owBQOvqanejQTcZA2Q8/hf8IhQ7kt8LFmrA/tpn6SXDXPOKFy2jPsWOp1nCiFV3NPDD0
+    properties :
+     x : 15
+     y : 195
+     width : 162
+     height : 60
+     anchor : 13
+     anchor_ratio_pos_x : 100
+     anchor_ratio_size_x : 300
+     anchor_ratio_pos_y : 500
+     take_focus : 0
+     accelerator_key : 65535
+     tab_order : 1
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1+
+         // Version 1
+         // Description 
+         // Bouton en annulation
+         
+        type : 14
+      -
+        code : |1+
+         Ferme()
+         
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : INT_ActiverALD
+    identifier : 0x2996e37e03be8bf0
+    internal_properties : IQAAACAAAAAGzjlpe4PBGHeso9HVMScSiru4F5Wjzeoa6tubzNYrc4I44IunmjhhxiePT9e+jamuHfMJhPtV8z5Rup32zxOVYDkb+GfG+ncDOQ5UmwrTgcRnEYtKIuGOb/1nsI0eBvis5jpvEUKg7SRn21ax8Hr2Rss+TQNL5ti8m3+KZzadkYxK2p1fWuBauq2cbOn4o6C6dvpyxtYELY/ASIt99Jq0m30BjtvmTL/C5MIecptt15FM07lyuBl3VJJAXg16J82uyKiUtI8d+9P3k8u8pzIfflZIRkepiYD/FWowJO5O8I6hLsuHSjMFCAQtVKwP8cjYzNu5QWGqTt2H2iIIyT2YKEp/cs4noSAEJ4UkHYw4obQHdqEATm60j/pMWQi1qo5NbGwmUVomPoSySOmErsHO2KG7EqFBsy9ihw0ggLnbQ3aJnZcy41EcuhChSrR0zkqJR/su4/SidLTRusPWotaf7XOA8LJ6yTcXmvvtOSJfobB3VxZjB6o6vyLgrrmwz0Iee+Ne6JI5TvLOwI9+UUhI6RDb7aDuA37ns5xzAHyrT/olWRhHOFyya4JfbPQwvfotj6RzBVmvoHlJEV/XARl3yAgBrUUVyeGcJJi3w7mJKpTHftcomfbpT/7zFnSoBbq/co6LoxYJHSb6aXmQx4FvMIFdZ82IKUXpV1FeTJCbiPwzZvpl90JCxlBKddXppi6IQEV4YnKdMgOXO5dyoMgVj8zYu73JZ9dWOSB0Itd8c+Etan4paHhF1Yqp0YMagai+3VvbdhnIPAh3O7CEH6BSPVQKqBzc+yYywOfcnSxkZgIgs9NYzake1WmZS1oB8d8fiXuPtNUPs4A4PYyhAxXadsbGQIOujBf8xLH+I1s0dtMhZa2DyTnZ0NgU0o1Xbr34AXfYufLY7WVuHs0Qec+yhs5NRkOqIODUYFJqkF0Gzs4oRfDeTxDz2PCdX+z5La7dg3ibekD7rl/2oqKJGWL4c6PSssRK1EexKAhxEs2bWmFPfVxgbXG0x7jfaAsXftQ2et1RRgxMeI7ovqToNCvwP4SQskvSU2hSRUe89BQAZXwBnIpFeQItJs7MXycY+8i3tR6GIyGjr/FTQ76lQkvER7tcJj4uhuxl/0ADZbpkJYt5DsbwxQ+mLXuy0Oqx6mg4Z+vc
+    properties :
+     x : 57
+     y : 82
+     width : 247
+     height : 36
+     note_title :
+      fr-FR : Rechercher la case ALD
+     caption :
+      fr-FR : Interrupteur
+     initial_value :
+      fr-FR : "0"
+     anchor : 8
+     tab_order : 0
+    options :
+     -
+       internal_properties : IQAAACAAAAAxwSVKJ/TXqgyECu5ktqJVaIAhMnnDUoQ9JB6VgytvFPlPvuit7eDUPQrReu8cl3srVDtUwiywVrhyJDdw/5cfyJlc0fTfhfi6BAZlXTXpJtCyjdFA3qj32Ra1EjCX1k+2v68wR9yHo0311ORHn8epItCIFOaJnUb+Y87FeEBsyEq9/AMOmz4FDeaGem4N3Ia+4oS4x7/uwmhlcuZ5tc1HqoDIZHTI/7+BcNfJgD8eSFz7rnp6cKMF+8F5K6l1rCKuP/XdWKi6CJkYGl6y9Q==
+       properties : {}
+     -
+       internal_properties : IQAAACAAAAAFFckWw6CT9viQFkLwIq5hNHztFj2HNihFO0JrrZOn7D175viTJRiYUX7rgAm8E/cPPs/gYGB8FsTO7gVC41trtOV8sdY/0bTKRDA7jzktchjiAV0SjpADdcJXzJb39r+i+28I+ZwDAGzEPRNyImRUcee3ASmsGIuB1rfkYyvFp70oJzilEr2CjGWPgWEIJV2ZBUd1csrpN2NQZ/lm6nwAk+EZg+ldfDIejfLmkQDdmT2cr9/izPeZb5VNf4UpUMbyu1nJbFx2RMX0ZgpmIQ==
+       properties : {}
+    type : 132
+    controls : []
+    code_elements :
+     type_code : 155
+     p_codes :
+      -
+        code : |1+
+         // Version 1
+         // Description
+         // Interrupteur à bascule 2 libellés internes
+         
+        type : 14
+  -
+    name : LIB_Def_Interrupteur
+    identifier : 0x2996eb37056cb81f
+    internal_properties : IQAAACAAAAALXrti9+7Ul0X1vk7TzdQ3mWwtXEBBRh+Gq7EoMCH8o8hocD0a/R/LI9LBR1dhXk9SnmX5mhY1ix/hP9wlvI3mPFsKPYrcg01HcIlfrkg8L1uNgk2aPkpITZKvtbAGk6NDb4Te/zSnJIVJhxx8EnHxis6XpII44MsFGZeWsd8vcXt+OKi9O7oerxLyFXQ9inBmOJuCFAibp07joQwm6ki1la5TnAWHZk+pSnlohS0MC1hoSOcz70bhINozOOZWnElUREYw0GzKjqfqQRorYRqBHeDMghmUbJuIluOYSJhiRbUP3NInRfsOI40vDKeIsZHckYciZyJwvH6wMd77kATaMto7T/XB3a7vWP0E2SxLMBdliG7XDPZ9QZ9MzZe+eY56fqLg162ByXKwmzIbx0d/LWJjNMJraB2nawrPUsM2+4N2WnqwaYiJ2Bv8e494uwi2ssaaqg==
+    properties :
+     x : 57
+     y : 59
+     width : 178
+     height : 19
+     caption :
+      fr-FR : "Recherche de l'ALD :"
+     tab_stop : 0
+     take_focus : 0
+    type : 3
+    code_elements :
+     type_code : 2
+     p_codes : []
+ actionbar :
+  name : ACTB_ActionBar
+  identifier : 0x299462fe1e60939b
+  internal_properties : IQAAACAAAABSW1gVjEIWXeSNCGM3kh6S1SctzsuKixH7ICpQbAMs1DS9ipLLvwr0Vd3XxY32cHGGBi/cQ1k0RMd47YpRocNbkypVXOAu44s7ZpkcxH2BiPpiBthIYTANyTnQNXIwfLuJMLCR/zSfgpvdWqe377TKI2zclT4mcKsuI5w5TonGKCixrh3NkwTs65TiSIpN0F6cqi0sOAD9RjCOXm7KF/tU2UHs6UT08+zBn3dtfl3W06n3wsrBUlHNxWTGmNF39VgDNvjGnDPyxL0hHfeIS6dhmIFVQzquLwNwlGZ/WfpasmeQQnfcvTBmcnL2bU/rVo020e/AFRQ6mqs6LNBBZg==
+  properties : {}
+  controls : []
+  code_elements :
+   type_code : 125
+   p_codes :
+    -
+      code : |1+
+       
+       
+      type : 18
+    -
+      type : 229
+      enabled : false
+    -
+      type : 239
+      enabled : false
+    -
+      type : 240
+      enabled : false
+    -
+      code : |1+
+       
+       
+      type : 17
+ menu :
+  name : _Menu
+  identifier : 0x29f8144500a4e5ba
+  internal_properties : IQAAACAAAADRRRHbXBa1NlFeYpLn0TrLqG8kkKza96mr9KnuSHx7jqrivmhbUmMGzXwqd7q9hr7apiNaB2IH/2jnaAqTUpx3x7ofQ+m+8ubiy4eax35Jjz8TVf517jWpfc5xKk9qkDuWlOYQrrT4fsG6KG5dwuhHtKEmbY51KtVU0Kh5bhza8GBTz/bW5iLNpGArv4dSvjCYBlChW7kQwXXHkoJNzZ4VwHDpqcQDe3L+Exl5oM8s1nOLyak/GtA1wK7tqyZqRYze4oMXyhh2HM4tmQPbqklUeILtXfdDIc0T8N2AAEBAyoSA
+  properties : {}
+  options : []
+ languages :
+  - fr-FR
+ popup_menus : []
+ message_bar :
+  internal_properties : IQAAACAAAAC4z/hstMRBK8udCH3f0TvOtlYtXu30dtZCDfbksFl+dexaCBCcQF0L5uSiFcmt0geAgnEMiYTV31bSw06pZzgsXLgsbCPpLT30nzaez7KOg7I9tp2XtebBP2eJFNA0PZW0
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      // Cette structure est un format il est appelé lors de l'enregistrement des informations.
+      ST_ResultatOCR est une Structure
+      	VersionDetectee	est une chaîne
+      	EstALD			est un booléen
+      	ImageDessinee	est une Image
+      FIN
+      
+      gbAnalyseEnCours est un booléen = Faux
+   -
+     code : |1+
+      
+      
+     type : 34
+   -
+     code : |1+
+      
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1+
+      
+      
+     type : 2
+  procedures :
+   -
+     name : CallBackPhoto
+     procedure_id : 1843207776542219766
+     type_code : 14
+     code : |1-
+      // Résumé : Récupère la scan de l'utilisateur, la sauvegarde sur le téléphone et déclenche l'analyse OCR.
+      // Syntaxe :
+      // CallBackPhoto (<nNbImages> est entier, <tabImagesScannees> est tableau d'Image)
+      //
+      // Paramètres :
+      //	nNbImages (entier) : Le nombre de scans validés par l'utilisateur.
+      //	tabImagesScannees (tableau d'Image) : Le tableau contenant les images capturées en mémoire vive.
+      // Valeur de retour :
+      // 	Aucune
+      //
+      // Exemple :
+      // (Cette procédure est appelée automatiquement en callback par la fonction de scan de l'appareil)
+      //
+      
+      PROCÉDURE CallBackPhoto(LOCAL nNbImages est un entier, LOCAL tabImagesScannees est un tableau d'Image)
+      
+      // 1. L'utilisateur a annulé la prise de photo (0 image) ?
+      SI nNbImages <= 0 OU tabImagesScannees.vide ALORS
+      	RETOUR
+      FIN
+      
+      // 2. On sauvegarde l'image initial pour le futur envoie dans la BDD
+      sNomFichierOriginal			est une chaîne	= "Scan_Original_" + DateHeureSys() + ".jpg" // Enregistre le fichier une première fois
+      sCheminOriginalSauvegarde	est une chaîne	= fRepDonnées() + ["/"] + sNomFichierOriginal // Récupérer le chemin du scan
+      
+      dSauveImageJPEG(tabImagesScannees[1], sCheminOriginalSauvegarde)
+      
+      sNomUniqueThread est une chaîne = "Thread_" + DateHeureSys() // Permet de ne jamais avoir le même résultat
+      
+      // Permet d'attendre que l'appli revienne au premier plan
+      ThreadExécute(sNomUniqueThread, threadNormal, ProcAttenteUI)
+      
+      	// --- PROCÉDURE INTERNE AU CALLBACK ---
+      	PROCÉDURE INTERNE ProcAttenteUI()
+      		// Pause de 50 centièmes (0.5 seconde) en arrière-plan
+      		ThreadPause(50)
+      		ExécuteThreadPrincipal(SuiteTraitementOCR, tabImagesScannees[1])
+      	FIN
+     type : 458752
+   -
+     name : LancerTraitementOCR
+     procedure_id : 1843208562521351882
+     type_code : 14
+     code : |1-
+      // Résumé : Exécute le processus complet d'analyse d'une image : détection du type de Cerfa, redressement, rognage, et recherche de la case ALD.
+      // Syntaxe :
+      // stMonResultat = LancerTraitementOCR (<imgSource> est Image)
+      //
+      // Paramètres :
+      //	imgSource (Image) : L'image brute du document scan capturée par l'utilisateur.
+      // Valeur de retour :
+      // 	ST_ResultatOCR : Une structure contenant la version du Cerfa détectée, le résultat de la case ALD (Vrai/Faux), et l'image finale redressée/dessinée.
+      //
+      // Exemple :
+      // stResultat = LancerTraitementOCR(imgMaPhoto)
+      //
+      
+      PROCÉDURE LancerTraitementOCR(LOCAL imgSource est une Image) : ST_ResultatOCR
+      
+      stRes est un ST_ResultatOCR
+      stRes.VersionDetectee	= ""
+      stRes.EstALD			= Faux
+      
+      // Validation initiale
+      SI imgSource.Largeur = 0 OU imgSource.Hauteur = 0 ALORS
+      	Erreur("L'image reçue est vide ou invalide.")
+      	RENVOYER stRes
+      FIN
+      
+      // =================================================================================
+      // 1. DÉTECTION DE LA VERSION
+      // =================================================================================
+      nLargVersion		est un entier	= imgSource.Largeur * 0.20 // Largeur de la recherche de la version
+      nHautVersion		est un entier	= imgSource.Hauteur * 0.15 // Hauteur de la recherche de la version
+      imgZoneVersion		est une Image	= dDécoupe(imgSource, 0, 0, nLargVersion, nHautVersion) // Découpe de la partie de recherche de la version du document
+      sTexteVersionBrut	est une chaîne	= OCRExtraitTexte(imgZoneVersion) // Extraction du texte dans la zone de recherche de la version
+      imgScanRedressee est une Image = RedresserEtRogner_PMT(imgSource) // Recadre l'image 
+      
+      // La procédure recherche la version de la prescription médicale de transport avec de l'OCR
+      stRes.VersionDetectee = RecupereVersionCerfa(sTexteVersionBrut)
+      
+      si stRes.VersionDetectee = "" alors
+      	// On arrête tout de suite le traitement
+      	// On peut renvoyer un code d'erreur spécifique pour afficher un message personnalisé
+      	stRes.VersionDetectee = "ANNULE_ALD"
+      	renvoyer stRes
+      fin
+      
+      // =================================================================================
+      // 2. REDRESSEMENT ET ROGNAGE
+      // =================================================================================
+      
+      // Si le redressement a échoué et renvoyé une image vide
+      SI imgScanRedressee.Largeur = 0 ALORS
+      	stRes.VersionDetectee = "ECHEC_SCAN" // On crée un code d'erreur spécial !
+      	RENVOYER stRes
+      FIN
+      
+      // =================================================================================
+      // 3. DÉTECTION DE L'ALD
+      // =================================================================================
+      stRes.EstALD		= ALDFinder(imgScanRedressee, stRes.VersionDetectee)
+      
+      // On met l'image avec les carrés dans notre structure pour l'afficher plus tard
+      stRes.ImageDessinee	= imgScanRedressee
+      
+      // =================================================================================
+      // 4. RETOUR DES RÉSULTATS
+      // =================================================================================
+      RENVOYER stRes
+     type : 458752
+   -
+     name : SuiteTraitementOCR
+     procedure_id : 1843514806575508744
+     type_code : 14
+     code : |1-
+      // Résumé : Gère le flux logique après la prise de photo : verrouillage anti-doublon, bypass de l'OCR (selon l'interrupteur utilisateur), gestion des erreurs d'analyse, et affichage de la boîte de dialogue finale de validation.
+      // Syntaxe :
+      //SuiteTraitementOCR (<imgDeTravail> est Image)
+      //
+      // Paramètres :
+      //	imgDeTravail (Image) : L'image capturée envoyée par la procédure CallBackPhoto pour traitement.
+      // Valeur de retour :
+      // 	Aucune
+      //
+      // Exemple :
+      // ExécuteThreadPrincipal(SuiteTraitementOCR, tabImagesScannees[1])
+      //
+      
+      PROCÉDURE SuiteTraitementOCR(imgDeTravail est une Image)
+      
+      // =========================================================================
+      // 1. FLAG D'EXÉCUTION ET SÉCURITÉ ANTI-REBOND
+      // =========================================================================
+      // Clause de garde : On vérifie le booléen global d'état.
+      // Cela empêche le lancement de traitements parallèles simultanés si l'événement
+      // (clic ou retour de caméra) est déclenché plusieurs fois consécutives.
+      SI gbAnalyseEnCours = Vrai ALORS
+      	RETOUR
+      FIN
+      
+      gbAnalyseEnCours = Vrai
+      
+      SI pas INT_ActiverALD ALORS
+      	nReponseSimple est un entier = Dialogue("Voulez-vous envoyer ce scan (sans analyse) ?", ["Annuler", "Envoyer"], 2, 1)
+      
+      	SI nReponseSimple = 2 ALORS
+      		ToastAffiche("Scan envoyé avec succès.")
+      	SINON
+      		ToastAffiche("Scan annulé.")
+      	FIN
+      
+      	// On rouvre le verrou et on s'arrête là !
+      	gbAnalyseEnCours = Faux
+      	RETOUR
+      FIN
+      
+      // =========================================================================
+      // 2. TON TRAITEMENT OCR
+      // =========================================================================
+      
+      stMonResultat est un ST_ResultatOCR
+      stMonResultat = LancerTraitementOCR(imgDeTravail)
+      
+      SI stMonResultat.VersionDetectee = "ANNULE_ALD" ALORS
+      	Info("La version n'est pas valide, veuillez recommencer.")
+      	gbAnalyseEnCours = Faux
+      	RETOUR
+      FIN
+      
+      SI stMonResultat.VersionDetectee = "ECHEC_SCAN" ALORS
+      	Info("Le document est illisible ou mal cadré.", "Veuillez reprendre la photo.")
+      	gbAnalyseEnCours = Faux
+      	RETOUR
+      FIN
+      
+      // =========================================================================
+      // GESTION DE LA VERSION NON DÉTECTÉE
+      // =========================================================================
+      SI stMonResultat.VersionDetectee = "" ALORS
+      	// 1. On affiche le popup d'avertissement
+      	Info("Version du document non reconnue.", "Veuillez reprendre la photo en vous assurant que le coin supérieur gauche (numéro Cerfa) est bien lisible et net.")
+      
+      	// 2. On rouvre le verrou pour permettre une nouvelle tentative
+      	gbAnalyseEnCours = Faux
+      
+      	// 3. On arrête l'exécution de la procédure ici (la popup finale d'envoi ne s'affichera pas)
+      	RETOUR
+      FIN
+      
+      // =======================================================================
+      // DÉBUG : Permet d'afficher le résultat du document traité avec les dessins de recherche
+      // Ouverture de ta nouvelle fenêtre de débogage
+      
+      //OuvreFenêtreMobile(FEN_Debug, stMonResultat.ImageDessinee, stMonResultat.VersionDetectee, stMonResultat.EstALD)
+      
+      // =======================================================================
+      
+      sTexteAffiche est une chaîne
+      sTexteAffiche = "Résumé du scan :" + RC + RC + ...
+      "Type de document : Cerfa " + stMonResultat.VersionDetectee + RC + ...
+      "ALD Exonérante : " + (stMonResultat.EstALD ? "OUI" SINON "NON") + RC + RC + ...
+      "Voulez-vous envoyer ce résultat ?"
+      
+      nReponse est un entier = Dialogue(sTexteAffiche, ["Annuler", "Envoyer"], 2, 1)
+      
+      SI nReponse = 2 ALORS
+      	// -> Mets ici ton code d'envoi avec les données ALD
+      	ToastAffiche("Données validées et envoyées.")
+      SINON
+      	ToastAffiche("Scan annulé.")
+      FIN
+      
+      // =========================================================================
+      // 5. LIBÉRATION DU CONTEXTE
+      // =========================================================================
+      // Le traitement asynchrone est terminé et l'interface utilisateur a répondu.
+      // On réinitialise le flag d'état pour autoriser une nouvelle analyse.
+      gbAnalyseEnCours = Faux
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : IQAAACAAAACztBann71RNIHogUq+6IbFtnb4JN3nhaK4v8y46oR+Hq7ABOHm6xuJ9ScFUCY1MRwBua/Nd5af69M2jtKQ3Rv2wHXWdOhiZskEia3nO+tYgbsYLmOINg12Ubk=
+  original_name : _11
+resources :
+ string_res :
+  identifier : 0x199462da010107a7
+  internal_properties : IQAAACAAAABP1zFNrbzo9KYxMdzgAtxpT6VeF7w/PHMVGlfncdzSCltN41Ky4pMWCHpObmKm6VCfZYWnv5mWhIqk
+custom_note :
+ internal_properties : IQAAACAAAAA4zjYLyWv3dktwUyAundgOH3+4/XziLlqiaqgwr4Dmp0Dm3KP264JgDg==
+rad :
+ internal_properties : IQAAACAAAACZM/kb7IvKRWO4ZaUcQrDzKT854FAu0KdYt3OnizA/nBqITcp+

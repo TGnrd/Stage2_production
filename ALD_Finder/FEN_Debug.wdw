@@ -1,0 +1,129 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : FEN_Debug
+ major_version : 31
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : FEN_Debug
+ identifier : 0x2995863102aa1592
+ internal_properties : IQAAACAAAAByzukl4vqBtWFjdlXJ8yCaRxssLFKxRkBulZJZtb397AkjicU/f59EoDExufCWg42qp0B0ias4Wx+fhYLgG0aHJMDl6YStWouMnEZ0DwQJvEqhSBcIGS1VcdlHWZ++tHte6AhFSYhfdJlKuLIn6iEzm1YUBMWNpDwIfUK1SyDWMVDWxvJPlbXzYdDZ4c/3+FvM+BE8UlXzyji7q/UINd5qR+MwpvBUdNMDjvIzNmRXqj6XJFxnua3++76TFZEIH1BZruJLCtHQGkCyE8BQ8X71BphmykQmCIOt8BU92EDKaDvYiWSvzAvEAXlTWdO9EKpRp2I3XtdZGWiQAc0vlhyjem2ygkD9TRE8aae6hUnigK9vaYBlHP2dKxdgFuo3vDYMmZHu9DDItRl7QSS6YjGSWfB+EBN33GY8feiQgTLxyNbtun/PxTRgjhu8d8sVkwnajnVqxpTlHgSLsKUxZUWsrJof4Xi6X0cl8OhIAsbDU4rTh1rd19m31iwNBWCdHNFJtP2TmpF7lGo1N6tCzj7l2YsL35PpBQMOBTWjI5gIWLSkp62LuWNugsCBAkp8Kse1ZuLwl0koVWOdzxvfC4UqbvxtazcM/Ilhfgrgngr5apFt11UvTb7YZOY4ODb0qwC4+PIujvr5v///7+qC1IS8KGz2LNFb54pub95ATGatuETQpdgEdSsm8afSVa7lyKP2VWzi/UmnPujxXPr6aLtnomorCWSUYJgxYalhhtA1xOaawoWCo/sQzq+ii92NKiCYmcd5F7GXB2U8gmZAlhqhjm65kGbxUV7/S20yO5Anr9QKoDaWqkgl4188oegPPP7gVgiAlWvNSrNsgOCB7j+igCo6RPvz5TwpA/5iqc8SMXrvOn6fQbTK++ek4KBi9KutnKxCQFSpkbTRDb7cr3ohZ+M=
+ properties :
+  width : 360
+  height : 569
+  heightMin : 650
+ controls :
+  -
+    name : IMG_Visuel
+    identifier : 0x2995865604eda714
+    internal_properties : IQAAACAAAADMu0p+w67K7aR6REkon7JwNin0/GjU0arDl7/qWO7AaRqhQFgbQi+TtF+bkPdtGzIoDIsF4gIni7830OLwI6Wot2CieXW3Y38qNcsNJQkC2Mtksi59mm+lUx7Kkq/c5K/NkFCV81n1YoVN4gi4xGO5TEXrwvznIUhlrQG251qtwkPsrcfj0Y0EtN/fOOP7QzB5FrhmfGngjDyNcZq8/nqYM6/AsSMt8QXaCA8pdERZZWXRuW/IgJPgLsWFY31r3D2MQ3+weXBCzI5zy6DK9oSzzddT56u/nM3/3lkfJ9VDqCR0X9zjggF5bBFnTdwQhCc2A2aNVq8Blr8f7od+sjTHMkNIsARRQBcvqzaFla1ESVm8DHYRf0FPgd9TUzZVAM7yIUjxDRW4zkkw6naPX9jLpWpBapTV1m6IBubatq6iOvgaBgT+zJTmK0GkFJJePpI0SOSUqOhahCRrG0daEAh4d5AfrJ/lJoS8VLseha6QBr3NZhauoLOlCKJtKX4AN/DE6hgUbGj4YiLk6k73ZlxWBu8+gs7C+7wqyKfn2lDTwBgRAToavL5VyHiOvLBhJ35c2CHJibFZH+9HYBtfjQ0LawF9EuxsHCj2cdLPUuYnow0loPJcqyqKN+VGLiQteGqUDPTIKdKGHgEUNEdlzQjaBYy6kYc2fKYTJlV/r5WuxSchRHftbh55VJyg47BAFVQz+IsZSBWWIxLZqJEeqZn0+7QvHH1/oSUZw6+DaLheOsFV
+    properties :
+     x : 30
+     y : 48
+     width : 304
+     height : 477
+     anchor : 10
+     tab_stop : 0
+     take_focus : 0
+     accelerator_key : 65535
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+ actionbar :
+  name : ACTB_ActionBar
+  identifier : 0x2995863102ab1592
+  internal_properties : IQAAACAAAACaE6BNxKoOtYwl0Duf+nY6zQ/F9lNCs1mzaKjvlolSEor7PFTR1Yj2S9NdY//8jg/8HAkeaQfiHuUOSwAz17npERH4KSRWN/fzhnFIEMXBwGrCEqS8iaxZEZHYuf74tOPB6ATNI0zD3kst4hs7ZzQyw4Q4IZI2fO9Gkxy9Ypm+3mJrkP/PvZY2TSZ8niSXwkyetCcmSjIneHpImDyMUcWim4MuG5amzQZLGXFTKLc4QTt5PKRDPGPXBxYOeOELfdCfimRm/PfSLEG1IYsgD2cx1E0pe3Jq57uMgNIT8ZZ6Uot89h8kdeieugoeBScDvnUeOUd4bfwigkOC5BiJLg==
+  properties : {}
+  controls : []
+  code_elements :
+   type_code : 125
+   p_codes :
+    -
+      code : |1+
+       
+       
+      type : 18
+    -
+      type : 229
+      enabled : false
+    -
+      type : 239
+      enabled : false
+    -
+      type : 240
+      enabled : false
+    -
+      code : |1+
+       
+       
+      type : 17
+ menu :
+  name : _Menu
+  identifier : 0x29f8144500a4e5ba
+  internal_properties : IQAAACAAAADRRRHbXBa1NlFeYpLn0TrLqG8kkKza96mr9KnuSHx7jqrivmhbUmMGzXwqd7q9hr7apiNaB2IH/2jnaAqTUpx3x7ofQ+m+8ubiy4eax35Jjz8TVf517jWpfc5xKk9qkDuWlOYQrrT4fsG6KG5dwuhHtKEmbY51KtVU0Kh5bhza8GBTz/bW5iLNpGArv4dSvjCYBlChW7kQwXXHkoJNzZ4VwHDpqcQDe3L+Exl5oM8s1nOLyak/GtA1wK7tqyZqRYze4oMXyhh2HM4tmQPbqklUeILtXfdDIc0T8N2AAEBAyoSA
+  properties : {}
+  options : []
+ languages :
+  - fr-FR
+ popup_menus : []
+ message_bar :
+  internal_properties : IQAAACAAAAC4z/hstMRBK8udCH3f0TvOtlYtXu30dtZCDfbksFl+dexaCBCcQF0L5uSiFcmt0geAgnEMiYTV31bSw06pZzgsXLgsbCPpLT30nzaez7KOg7I9tp2XtebBP2eJFNA0PZW0
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      // Code des déclarations globales de FEN_Debug
+      PROCÉDURE MaFenêtre(imgAffichee est une Image, sVersion est une chaîne, bStatutALD est un booléen)
+      
+      // On affiche l'image gribouillée dans le champ
+      IMG_Visuel = imgAffichee
+      
+      // On affiche un petit popup d'information par-dessus
+      Info("Version : " + sVersion, "Case ALD lue : " + (bStatutALD ? "OUI (Cochée)" SINON "NON"))
+   -
+     code : |1+
+      
+      
+     type : 34
+   -
+     code : |1+
+      
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1+
+      
+      
+     type : 2
+ code_parameters :
+  internal_properties : IQAAACAAAACztBann71RNIHogUq+6IbFtnb4JN3nhaK4v8y46oR+Hq7ABOHm6xuJ9ScFUCY1MRwBua/Nd5af69M2jtKQ3Rv2wHXWdOhiZskEia3nO+tYgbsYLmOINg12Ubk=
+  original_name : _11
+resources :
+ string_res :
+  identifier : 0x1995862e00390d06
+  internal_properties : IQAAACAAAABP1zFNrbzo9KYxMdzgAtxpT6VeF7w/PHMVGlfncdzSCltN41Ky4pMWCHpObmKm6VCfZYWnv5mWhIqk
+custom_note :
+ internal_properties : IQAAACAAAAA4zjYLyWv3dktwUyAundgOH3+4/XziLlqiaqgwr4Dmp0Dm3KP264JgDg==
+rad :
+ internal_properties : IQAAACAAAACZM/kb7IvKRWO4ZaUcQrDzKT854FAu0KdYt3OnizA/nBqITcp+
